@@ -41,7 +41,9 @@ class ViewController: UIViewController {
         var randomIndex: Int = Int(arc4random_uniform(UInt32(messages.count)))
         
         while randomIndex == lastIndex {
+            print("Before condition: my new randomIndex is \(randomIndex) and lastIndex is \(lastIndex)")
             randomIndex = Int(arc4random_uniform(UInt32(messages.count)))
+            print("After condition: my new randomIndex is \(randomIndex) and lastIndex is \(lastIndex)")
         }
         messageLabel.text = messages[randomIndex]
         
