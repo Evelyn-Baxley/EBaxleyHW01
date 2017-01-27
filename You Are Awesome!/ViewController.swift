@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     
     var lastIndex = -1
     var lastImage = -1
+    var lastSound = -1
     let numOfImages = 10
     let numOfSounds = 6
     
@@ -36,9 +37,7 @@ class ViewController: UIViewController {
     }
 
     
-    func playSound() {
-        var soundName = "sound" + String(arc4random_uniform(UInt32(numOfSounds)))
-        
+    func playSound(soundName: String) {
         if let sound = NSDataAsset(name: soundName) {
             do {
                 try awesomePlayer = AVAudioPlayer(data: sound.data)
@@ -66,6 +65,7 @@ class ViewController: UIViewController {
         
         var randomIndex: Int = Int(arc4random_uniform(UInt32(messages.count)))
         var randomImage: Int = Int(arc4random_uniform(UInt32(numOfImages)))
+        var randomSound: Int = Int(arc4random_uniform(UInt32(numOfSounds)))
         
         while randomIndex == lastIndex {
             randomIndex = Int(arc4random_uniform(UInt32(messages.count)))
@@ -81,7 +81,14 @@ class ViewController: UIViewController {
         awesomeImage.image = UIImage(named: "image" + String(randomImage))
         lastImage=randomImage
         
-        playSound()
+        
+        // the code for making sure sounds aren't repeated follows
+        
+        while randomSound == lastSound {
+            randomSound = Int(arc4random_uniform(UInt32(numOfSounds)))
+        }
+        playSound(soundName: "sound" + String(randomSound))
+        lastSound = randomSound
        
         
         /*
