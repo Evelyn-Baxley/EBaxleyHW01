@@ -52,6 +52,17 @@ class ViewController: UIViewController {
         
     }
     
+    func nonRepeatedRandom(last: inout Int, range: Int) -> Int {
+        var random: Int = Int(arc4random_uniform(UInt32(range)))
+        
+        while random == last {
+            random = Int(arc4random_uniform(UInt32(range)))
+        }
+       last = random
+        
+        return random
+    }
+    
     @IBAction func messageButtonPressed(_ sender: UIButton) {
         
         let messages = ["You Are Fantastic!",
@@ -63,33 +74,17 @@ class ViewController: UIViewController {
                         "I can't wait to use your app!",
                         "You are da Bomb"]
         
-        var randomIndex: Int = Int(arc4random_uniform(UInt32(messages.count)))
-        var randomImage: Int = Int(arc4random_uniform(UInt32(numOfImages)))
-        var randomSound: Int = Int(arc4random_uniform(UInt32(numOfSounds)))
+        var random: Int
         
-        while randomIndex == lastIndex {
-            randomIndex = Int(arc4random_uniform(UInt32(messages.count)))
-        }
-        messageLabel.text = messages[randomIndex]
-        lastIndex=randomIndex
+        random = nonRepeatedRandom(last: &lastIndex, range: messages.count)
+        messageLabel.text = messages[random]
         
-        
-        while randomImage == lastImage {
-            randomImage = Int(arc4random_uniform(UInt32(numOfImages)))
-        }
         awesomeImage.isHidden = false
-        awesomeImage.image = UIImage(named: "image" + String(randomImage))
-        lastImage=randomImage
+        random = nonRepeatedRandom(last: &lastImage, range: numOfImages)
+        awesomeImage.image = UIImage(named: "image" + String(random))
         
-        
-        // the code for making sure sounds aren't repeated follows
-        
-        while randomSound == lastSound {
-            randomSound = Int(arc4random_uniform(UInt32(numOfSounds)))
-        }
-        playSound(soundName: "sound" + String(randomSound))
-        lastSound = randomSound
-       
+        random = nonRepeatedRandom(last: &lastSound, range: numOfSounds)
+        playSound(soundName: "sound" + String(random))
         
         /*
         messageLabel.text = messages[index]
