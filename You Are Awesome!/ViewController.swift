@@ -70,13 +70,13 @@ class ViewController: UIViewController {
     
     //MARK: Actions
     
-    @IBAction func soundSwitchPressed(_ sender: UISwitch)
-        {
+    @IBAction func soundSwitchPressed(_ sender: UISwitch) {
             if soundSwitch.isOn == false {
-                awesomePlayer.stop()
+                if lastSound != -1 {
+                    awesomePlayer.stop()
             }
+        }
     }
-    
     
     @IBAction func messageButtonPressed(_ sender: UIButton) {
         

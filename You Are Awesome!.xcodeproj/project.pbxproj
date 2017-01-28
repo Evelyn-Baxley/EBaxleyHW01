@@ -146,6 +146,7 @@
 				TargetAttributes = {
 					7EE7D2741E33A138008E98B9 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 94SQTE3M4C;
 						ProvisioningStyle = Automatic;
 					};
 					7EE7D2881E33A13B008E98B9 = {
@@ -339,9 +340,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 94SQTE3M4C;
 				INFOPLIST_FILE = "You Are Awesome!/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gallaugher.You-Are-Awesome-";
+				PRODUCT_BUNDLE_IDENTIFIER = "Evelyn-Baxley";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -351,9 +354,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 94SQTE3M4C;
 				INFOPLIST_FILE = "You Are Awesome!/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gallaugher.You-Are-Awesome-";
+				PRODUCT_BUNDLE_IDENTIFIER = "Evelyn-Baxley";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -406,6 +411,7 @@
 				7EE7D2941E33A13B008E98B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7EE7D2951E33A13B008E98B9 /* Build configuration list for PBXNativeTarget "You Are Awesome!Tests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +420,7 @@
 				7EE7D2971E33A13B008E98B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
